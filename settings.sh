@@ -89,7 +89,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 # Show file extensions in Finder:
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+# Allow quitting Finder via ⌘ + Q;
 defaults write com.apple.finder QuitMenuItem -bool true
 
 # Allow text selection in Quick Look
@@ -175,6 +175,10 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# Transmission: Don't prompt for confirmation before downloading
+defaults write org.m0k.transmission DownloadAsk -bool false
+defaults write org.m0k.transmission MagnetOpenAsk -bool false
 
 # Restarting apps:
 echo 'Restarting apps...'
