@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+shift+l",
+    "command": "macros.snippetWithDescription"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "eslint.restart"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "typescript.restartTsServer"
+  }
+]
