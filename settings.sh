@@ -161,6 +161,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
+# Disable inline attachments (just show the icons)
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+
 
 # Restarting apps:
 echo 'Restarting apps...'
