@@ -33,6 +33,7 @@ alias vim="nvim"
 alias v='nvim'
 alias c='code .'
 alias pn=pnpm
+alias cl=clear
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$PATH:$HOME/.maestro/bin
