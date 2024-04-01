@@ -1,0 +1,56 @@
+[user]
+	email = julienqueffelec@me.com
+	name = Julien Queffelec
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+  default = current
+[pull]
+	rebase = true
+    autostash = true
+[init]
+	defaultBranch = main
+[branch]
+	autosetuprebase = always
+[color]
+	ui = true
+[rebase]
+	autoStash = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[github]
+    user = julienqueffelec
+[status]
+	short = true
+	branch = true
+	color = true
+	submoduleSummary = true
+	    showUntrackedFiles = all
+[alias]
+    addu = add -u .
+	unstage = reset HEAD
+	untracked = status -u .
+	untracked-at = status -u
+	ls = ls-files
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(dim white)(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg2 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    tree = log --graph --pretty=format:'%C(auto)%h - %s [%an] (%C(blue)%ar)%C(auto)%d'
+    bigtree = log --graph --decorate --pretty=format:'%C(auto)%d%n%h %s%+b%n(%G?) %an <%ae> (%C(blue)%ad%C(auto))%n'
+    hist = log --date=short --pretty=format:'%C(auto)%ad %h (%G?) %s [%an] %d'
+    open = !open `git config remote.origin.url` # open repo in browser
+    issues = !open "$(git config remote.origin.url)/issues" # open repo's issues in browser
+    url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"' # show url of remote
