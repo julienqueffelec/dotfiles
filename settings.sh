@@ -173,6 +173,8 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 # Disable inline attachments (just show the icons)
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Restarting apps:
 echo 'Restarting apps...'
