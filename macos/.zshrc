@@ -69,9 +69,26 @@ alias gp="git push"
 alias gpl="git pull"
 alias gl="git log --oneline --decorate --graph"
 
+# list npm or yarn global packages
+alias global-packages="yarn global list; npm list --global --depth 0"
+
+# android adb
+alias a:devices="adb devices"
+alias a:reverse="adb reverse tcp:8081 tcp:8081; adb reverse tcp:8097 tcp:8097"
+
+# iOS
+alias i:simulator="xcrun simctl list devices"
+
 # Functions
 function mkcd() {
   mkdir -p "$@" && cd "$_"
+}
+
+function update_global_packages() {
+  echo "Updating global npm packages..."
+  npm update -g
+  echo "Updating global Yarn packages..."
+  yarn global upgrade
 }
 
 function update_all() {
@@ -84,9 +101,6 @@ function update_all() {
   echo "Updating Oh My Zsh..."
   omz update
 }
-
-# Starship prompt
-eval "$(starship init zsh)"
 
 # Ruby
 eval "$(rbenv init - zsh)"
