@@ -60,12 +60,17 @@ cask_install slack
 cask_install discord
 cask_install the-unarchiver
 cask_install cleanshot
+cask_install aldente
 cask_install android-studio
-cask_install istat-menus
+cask_install stats
 cask_install contexts
 cask_install expo-orbit
 cask_install transmission
 cask_install iina
+cask_install zsh
+cask_install zsh-syntax-highlighting
+cask_install zsh-autosuggestions
+cask_install z
 
 # Development tools
 cask_install adoptopenjdk
