@@ -96,6 +96,12 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+# Set the new Finder window to be non-floating (i.e. not to have a shadow)
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Set the default search scope to current folder only
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
@@ -110,6 +116,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Show Library folder
 chflags nohidden ~/Library
+
+# Hide the recent tags menu
+defaults write com.apple.finder ShowRecentTags -bool false
 
 # === Dock, Dashboard, and hot corners ===
 
@@ -146,6 +155,9 @@ defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Set Safari's home page to `about:blank` for faster loading
 defaults write com.apple.Safari HomePage -string "about:blank"
+
+# Disable natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
