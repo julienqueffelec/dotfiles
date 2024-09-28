@@ -43,8 +43,9 @@ echo "Installing Homebrew packages..."
 brew_install zsh
 brew_install git
 brew_install node
+cask_install watchman
 brew_install yarn
-brew_install neovim
+brew_install nvm
 brew_install dockutil
 
 # Install casks
