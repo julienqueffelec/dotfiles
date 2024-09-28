@@ -10,7 +10,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ZSH_THEME="gozilla"
 
-
 plugins=(
   z
   git
@@ -39,16 +38,13 @@ alias d="cd ~/d"
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$PATH:$HOME/.maestro/bin
 
 eval "$(starship init zsh)"
 
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
 
 # Ruby
 eval "$(rbenv init - zsh)"

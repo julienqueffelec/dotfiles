@@ -41,7 +41,7 @@
 	submoduleSummary = true
 	    showUntrackedFiles = all
 [alias]
-    addu = add -u .
+  addu = add -u .
 	unstage = reset HEAD
 	untracked = status -u .
 	untracked-at = status -u
