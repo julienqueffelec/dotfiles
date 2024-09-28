@@ -1,51 +1,92 @@
-export ZSH="/Users/julienqueffelec/.oh-my-zsh"
+# Check if Homebrew is installed
+if type brew &>/dev/null; then
+  export PATH="/opt/homebrew/bin:$PATH"
+else
+  echo "Homebrew is not installed. Some features may not work correctly."
+fi
 
-export PATH=/opt/homebrew/bin:$PATH
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
+# Set name of the theme to load
+ZSH_THEME="gozilla"
+
+# Plugins
+plugins=(
+  git
+  z
+  node
+  vscode
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  you-should-use
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# Android SDK
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-ZSH_THEME="gozilla"
-
-plugins=(
-  z
-  git
-  node
-  vscode
-  you-should-use
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
-source /Users/julienqueffelec/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/julienqueffelec/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Maestro
+export PATH=$PATH:$HOME/.maestro/bin
+
+# Aliases
 alias vim="nvim"
 alias v='nvim'
 alias c='code .'
 alias pn=pnpm
 alias cl=clear
-alias d="cd ~/d"
+alias d="cd ~/Documents"
+alias g="git"
+alias gst="git status"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gl="git log --oneline --decorate --graph"
 
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+# Functions
+function mkcd() {
+  mkdir -p "$@" && cd "$_"
+}
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH=$PATH:$HOME/.maestro/bin
+function update_all() {
+  echo "Updating Homebrew..."
+  brew update && brew upgrade && brew cleanup
+  echo "Updating npm..."
+  npm update -g
+  echo "Updating Yarn..."
+  yarn global upgrade
+  echo "Updating Oh My Zsh..."
+  omz update
+}
 
+# Starship prompt
 eval "$(starship init zsh)"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Ruby
 eval "$(rbenv init - zsh)"
-

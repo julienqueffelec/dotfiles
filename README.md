@@ -13,17 +13,17 @@ This repository contains my personal dotfiles for macOS setup and configuration.
 
 ## Installation
 
-1.  Clone this repository:
+1. Clone this repository:
 
-    ```
-    git clone https://github.com/yourusername/dotfiles.git
-    cd dotfiles
-    ```
+   ```
+   git clone https://github.com/yourusername/dotfiles.git
+   cd dotfiles
+   ```
 
-2.  Run the install script:
-    ```
-    ./install.sh
-    ```
+2. Run the install script:
+   ```
+   ./install.sh
+   ```
 
 ## Manual Steps
 
