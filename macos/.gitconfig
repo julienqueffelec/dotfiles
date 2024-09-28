@@ -2,7 +2,7 @@
 	email = julienqueffelec@me.com
 	name = Julien Queffelec
 [core]
-	editor = nvim
+	editor = code --wait
 	excludesfile = ~/.gitignore_global
 [init]
 	defaultBranch = main
@@ -18,8 +18,14 @@
 	autoStash = true
 [merge]
 	ff = only
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
 [diff]
 	colorMoved = zebra
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [alias]
 	co = checkout
 	br = branch
