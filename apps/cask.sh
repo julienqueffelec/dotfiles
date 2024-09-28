@@ -83,6 +83,11 @@ else
   xcode-select --install
 fi
 
+# Install eas-cli
+echo "Installing eas-cli..."
+npm install -g eas-cli
+
+
 # Clean up
 echo "Cleaning up..."
 brew cleanup
