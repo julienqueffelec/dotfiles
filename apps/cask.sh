@@ -54,6 +54,7 @@ cask_install google-chrome
 cask_install visual-studio-code
 cask_install docker
 cask_install cocoapods
+cask_install fastlane
 cask_install iterm2
 cask_install alfred
 cask_install spotify
