@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 ## install brew
 if ! type "brew" >/dev/null; then
   echo_space
@@ -27,14 +26,14 @@ fi
 # Browsers
 echo "Installing Browsers..."
 brew install --cask google-chrome
-brew install --cask node
-brew install --cask yarn
-brew install --cask git
 
 # Development
 echo "Installing Development..."
 brew install --cask visual-studio-code
 brew install --cask docker
+brew install --cask node
+brew install --cask yarn
+brew install --cask git
 
 # Productivity
 echo "Installing Productivity..."
@@ -69,7 +68,6 @@ brew install --cask yt-dlp
 
 xcode-select --install
 sudo softwareupdate --agree-to-license
-
 
 echo_title "Cleaning brew cask..."
 brew cleanup
