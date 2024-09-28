@@ -184,4 +184,110 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write -globalDomain NSStatusItemSelectionPadding -int 12
 defaults write -globalDomain NSStatusItemSpacing -int 12
 
+# Install dockutil
+brew install dockutil
+
+########################
+#                      #
+# Applications Cleanup #
+#                      #
+########################
+#
+# Garage Band
+#
+sudo rm -rf /Applications/GarageBand.app
+#
+# iMovie
+#
+sudo rm -rf /Applications/iMovie.app
+#
+# Keynote
+#
+sudo rm -rf /Applications/Keynote.app
+dockutil --remove 'Keynote' --allhomes
+#
+# Numbers
+#
+sudo rm -rf /Applications/Numbers.app
+dockutil --remove 'Numbers' --allhomes
+#
+# Pages
+#
+sudo rm -rf /Applications/Pages.app
+dockutil --remove 'Pages' --allhomes
+
+################
+#              #
+# Dock Cleanup #
+#              #
+################
+#
+# App Store
+#
+dockutil --remove 'App Store' --allhomes
+#
+# Calendar
+#
+dockutil --remove 'Calendar' --allhomes
+#
+# Contacts
+#
+dockutil --remove 'Contacts' --allhomes
+#
+# Facetime
+#
+dockutil --remove 'FaceTime' --allhomes
+#
+# Launchpad
+#
+dockutil --remove 'Launchpad' --allhomes
+#
+# Mail
+#
+dockutil --remove 'Mail' --allhomes
+#
+# Maps
+#
+dockutil --remove 'Maps' --allhomes
+#
+# Messages
+#
+dockutil --remove 'Messages' --allhomes
+#
+# Music
+#
+dockutil --remove 'Music' --allhomes
+#
+# News
+#
+dockutil --remove 'News' --allhomes
+#
+# Notes
+#
+dockutil --remove 'Notes' --allhomes
+#
+# Photos
+#
+dockutil --remove 'Photos' --allhomes
+#
+# Podcasts
+#
+dockutil --remove 'Podcasts' --allhomes
+#
+# Reminders
+#
+dockutil --remove 'Reminders' --allhomes
+#
+# Safari
+#
+dockutil --remove 'Safari' --allhomes
+#
+# System Preferences
+#
+dockutil --remove 'System Preferences' --allhomes
+#
+# TV
+#
+dockutil --remove 'TV' --allhomes
+
 echo "macOS settings updated. Note that some of these changes require a logout/restart to take effect."

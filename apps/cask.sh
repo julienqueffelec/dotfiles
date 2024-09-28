@@ -1,73 +1,84 @@
-#!/bin/sh
+#!/bin/bash
 
-## install brew
-if ! type "brew" >/dev/null; then
-  echo_space
-  echo_title_install "homebrew"
-  sudo -v
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+# Exit on error
+set -e
+
+# Function to install Homebrew
+install_homebrew() {
+  if ! command -v brew &>/dev/null; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo "Homebrew is already installed."
+  fi
+}
+
+# Function to install a Homebrew package
+brew_install() {
+  if brew list "$1" &>/dev/null; then
+    echo "$1 is already installed."
+  else
+    brew install "$1" && echo "$1 is installed."
+  fi
+}
+
+# Function to install a Homebrew cask
+cask_install() {
+  if brew list --cask "$1" &>/dev/null; then
+    echo "$1 is already installed."
+  else
+    brew install --cask "$1" && echo "$1 is installed."
+  fi
+}
+
+# Install Homebrew
+install_homebrew
 
 # Update Homebrew
+echo "Updating Homebrew..."
 brew update
 
-# Upgrade any already-installed formulae.
-brew upgrade
+# Install Homebrew packages
+echo "Installing Homebrew packages..."
+brew_install zsh
+brew_install git
+brew_install node
+brew_install yarn
+brew_install neovim
+brew_install dockutil
 
-## install zsh
-if [[ $(which zsh) == "/bin/zsh" ]]; then
-  echo_space
-  echo_title_install "zsh"
-  brewinstall zsh
-  echo "${HOMEBREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells
-  chsh -s ${HOMEBREW_PREFIX}/bin/zsh
+# Install casks
+echo "Installing casks..."
+cask_install google-chrome
+cask_install visual-studio-code
+cask_install docker
+cask_install iterm2
+cask_install alfred
+cask_install spotify
+cask_install slack
+cask_install discord
+cask_install the-unarchiver
+cask_install cleanshot
+cask_install android-studio
+cask_install istat-menus
+cask_install contexts
+cask_install expo-orbit
+cask_install transmission
+cask_install iina
+
+# Development tools
+cask_install adoptopenjdk
+
+# Install Xcode command line tools
+if xcode-select -p &>/dev/null; then
+  echo "Xcode command line tools are already installed."
+else
+  echo "Installing Xcode command line tools..."
+  xcode-select --install
 fi
 
-# Browsers
-echo "Installing Browsers..."
-brew install --cask google-chrome
-
-# Development
-echo "Installing Development..."
-brew install --cask visual-studio-code
-brew install --cask docker
-brew install --cask node
-brew install --cask yarn
-brew install --cask git
-
-# Productivity
-echo "Installing Productivity..."
-brew install --cask alfred
-brew install --cask contexts
-brew install --cask expo-orbit
-brew install --cask the-unarchiver
-
-# Communication
-echo "Installing Communication..."
-brew install --cask slack
-brew install --cask discord
-
-# Terminal
-echo "Installing Terminal..."
-brew install --cask iterm2
-
-# Media
-echo "Installing Media..."
-brew install --cask spotify
-brew install --cask transmission
-brew install --cask iina
-
-# Tools
-echo "Installing Tools..."
-brew install --cask adoptopenjdk
-brew install --cask cleanshot
-brew install --cask android-studio
-brew install --cask istat-menus
-brew install --cask minisim
-brew install --cask yt-dlp
-
-xcode-select --install
-sudo softwareupdate --agree-to-license
-
-echo_title "Cleaning brew cask..."
+# Clean up
+echo "Cleaning up..."
 brew cleanup
+
+echo "Homebrew and cask installations complete!"
