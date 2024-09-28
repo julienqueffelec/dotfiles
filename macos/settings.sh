@@ -290,4 +290,22 @@ dockutil --remove 'System Preferences' --allhomes
 #
 dockutil --remove 'TV' --allhomes
 
+################
+#              #
+# Dock Additions #
+#              #
+################
+
+# Add iTerm to Dock
+dockutil --add /Applications/iTerm.app/
+
+# Add Spotify to Dock
+dockutil --add /Applications/Spotify.app
+
+# Add Visual Studio Code to Dock
+dockutil --add /Applications/Visual\ Studio\ Code.app/
+
+# Add Google Chrome to Dock
+dockutil --add /Applications/Google\ Chrome.app/
+
 echo "macOS settings updated. Note that some of these changes require a logout/restart to take effect."
