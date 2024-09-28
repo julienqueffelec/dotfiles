@@ -183,6 +183,7 @@
   "editor.unicodeHighlight.allowedLocales": {
     "tr": true
   },
+  "git.mergeEditor": true,
   "window.commandCenter": false,
   "diffEditor.renderSideBySide": false,
   "window.zoomLevel": 1,
