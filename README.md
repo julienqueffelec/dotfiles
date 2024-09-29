@@ -16,7 +16,7 @@ This repository contains my personal dotfiles for macOS setup and configuration.
 1. Clone this repository:
 
    ```
-   git clone https://github.com/yourusername/dotfiles.git
+   git clone https://github.com/julienqueffelec/dotfiles.git
    cd dotfiles
    ```
 
