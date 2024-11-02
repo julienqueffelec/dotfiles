@@ -60,6 +60,7 @@ cask_install alfred
 cask_install figma
 cask_install spotify
 cask_install imageoptim
+cask_install monitorcontrol
 cask_install slack
 cask_install discord
 cask_install the-unarchiver
