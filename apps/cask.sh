@@ -59,7 +59,7 @@ cask_install iterm2
 cask_install alfred
 cask_install figma
 cask_install spotify
-cask_install cursor
+cask_install imageoptim
 cask_install slack
 cask_install discord
 cask_install the-unarchiver
