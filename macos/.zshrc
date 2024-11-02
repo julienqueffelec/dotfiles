@@ -53,6 +53,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$PATH:$HOME/.maestro/bin
 
 # Aliases
+alias ll='ls -l'
+alias ......='cd ../../../../..;'
+alias .....='cd ../../../..;'
+alias ....='cd ../../..;'
+alias ...='cd ../..;'
+alias ..='cd ..;'
 alias vim="nvim"
 alias v='nvim'
 alias c='code .'
