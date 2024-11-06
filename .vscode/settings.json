@@ -1,22 +1,27 @@
 {
   "workbench.startupEditor": "none",
   "workbench.editor.tabSizing": "shrink",
+  "security.workspace.trust.untrustedFiles": "open",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "window.restoreFullscreen": true,
   "editor.tabSize": 2,
-  "editor.fontSize": 14,
-  "editor.fontFamily": "OperatorMono-Book,Hack Nerd Font, Monego, iA Writer Duospace, Fira Code iScript, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": 400,
+  "editor.fontSize": 13,
+  "editor.fontFamily": "MonoLisa,Hack Nerd Font, Monego, iA Writer Duospace, Fira Code iScript, Menlo, Monaco, 'Courier New', monospace",
+  "editor.lineHeight": 0,
   "editor.minimap.enabled": false,
-  "editor.fontLigatures": false,
   "editor.wordWrap": "on",
   "editor.cursorSmoothCaretAnimation": "on",
-  "files.autoSave": "onFocusChange",
   "editor.tabCompletion": "on",
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
+    "source.addMissingImports": "always",
     "source.sortMembers": "explicit"
   },
+  "typescript.inlayHints.variableTypes.enabled": true,
   "explorer.openEditors.visible": 1,
   "search.exclude": {
     "**/node_modules": true,
@@ -30,6 +35,7 @@
     ".expo": true,
     ".vscode": true
   },
+
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   // "editor.multiCursorModifier": "ctrlCmd",
@@ -47,6 +53,7 @@
   // --------------------------------------
   // INTEGRATED TERMINAL
   // "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 12,
   // --------------------------------------
   // TS IMPORT SUGGESTION
@@ -63,18 +70,7 @@
     "editorBracketHighlight.foreground6": "#abb2c0",
     "editorBracketHighlight.unexpectedBracket.foreground": "#ff5555"
   },
-  // --------------------------------------
-  // PRETTIER ----------------------------------
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.trailingComma": "none",
-  "prettier.arrowParens": "avoid",
-  "prettier.proseWrap": "preserve",
-  "prettier.quoteProps": "as-needed",
-  "prettier.bracketSameLine": false,
-  "prettier.bracketSpacing": true,
-  "prettier.tabWidth": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
   // Markdown
   "[markdown]": {
     "editor.quickSuggestions": {
@@ -84,7 +80,7 @@
     }
   },
   // JSON
-  "[json]": {
+  /*  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // JavaScript
@@ -101,7 +97,7 @@
   },
   // TypeScript + React
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   // JSON with Comments
   "[jsonc]": {
@@ -110,7 +106,7 @@
   // HTML
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }, */
   // ----------------------------------
   // ESLINT
   "eslint.validate": [
@@ -133,6 +129,7 @@
   // LANGUAGES SPECIFIC
 
   "vsicons.dontShowNewVersionMessage": true,
+  "telemetry.telemetryLevel": "off",
   "editor.inlineSuggest.enabled": true,
   "macros": {
     "snippetWithDescription": [
@@ -142,7 +139,7 @@
         "command": "editor.action.insertSnippet",
         "when": "editorTextFocus",
         "args": {
-          "snippet": "console.log('$CLIPBOARD', $CLIPBOARD)$0"
+          "snippet": "console.log('$CLIPBOARD', JSON.stringify($CLIPBOARD,null,2))$0"
         }
       }
     ]
@@ -155,7 +152,6 @@
   "editor.cursorSurroundingLines": 8,
   "extensions.ignoreRecommendations": true,
   "editor.guides.bracketPairs": true,
-  "editor.formatOnSave": true,
   "terminal.integrated.scrollback": 50000,
   "git.openRepositoryInParentFolders": "never",
   "javascript.preferences.importModuleSpecifier": "non-relative",
@@ -177,20 +173,48 @@
     ]
   },
   "workbench.iconTheme": "vscode-icons",
-
-  "workbench.statusBar.visible": false,
   "workbench.layoutControl.enabled": false,
   "editor.unicodeHighlight.allowedLocales": {
     "tr": true
   },
-  "git.mergeEditor": true,
   "window.commandCenter": false,
   "diffEditor.renderSideBySide": false,
   "window.zoomLevel": 1,
   "diffEditor.experimental.showMoves": true,
   "gitlens.graph.layout": "editor",
-  "cSpell.userWords": ["firestore", "tanstack"],
+  "cSpell.userWords": [
+    "ellipsize",
+    "firestore",
+    "HHMM",
+    "hookform",
+    "lastname",
+    "logbox",
+    "lottie",
+    "mmkv",
+    "MMKV",
+    "netinfo",
+    "shopify",
+    "sonarjs",
+    "tanstack"
+  ],
   "explorer.confirmPasteNative": false,
   "editor.accessibilitySupport": "off",
-  "workbench.colorTheme": "Moonlight II"
+  "workbench.colorTheme": "poimandres",
+  "editor.formatOnSave": true,
+  "search.followSymlinks": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  },
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "cSpell.language": "en,fr",
+  "supermaven.otherWarning": false,
+  "window.newWindowDimensions": "maximized",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
